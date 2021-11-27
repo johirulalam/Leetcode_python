@@ -1,0 +1,21 @@
+class Solution:
+    def countWords(self, words1: List[str], words2: List[str]) -> int:
+        my_list = list();
+        result = 0;
+        for i in words1:
+            countNu = 0;
+            twoValue = 0;
+            for k in words1:
+                if(i == k):
+                    twoValue += 1;
+            for j in words2:
+                if(i == j):
+                    countNu +=1;
+                    
+                if(countNu>1 or twoValue> 1):
+                    break;
+                
+            if(countNu == 1 and twoValue<2):
+                result +=1;      
+            
+        return result;
